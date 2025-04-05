@@ -32,29 +32,70 @@ def generate_index_html(output_file="index.html"):
   <title>CB-Wiki</title>
   <style>
     body {
-      background-color: #1e1e1e;
-      color: #f0f0f0;
-      font-family: 'Segoe UI', sans-serif;
-      max-width: 900px;
-      margin: 2rem auto;
+      margin: 0;
+      background-color: #2b2b2b;
+      font-family: Arial, sans-serif;
+      color: #f1f1f1;
+      line-height: 1.6;
+    }
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 2rem;
+      gap: 2rem;
+    }
+    .content {
+      flex: 2;
+      max-width: 800px;
+    }
+    .info {
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .box {
+      background-color: #333;
+      border: 2px solid #ffe600;
+      border-radius: 8px;
       padding: 1rem;
+      box-shadow: 0 0 10px #111;
+    }
+    .box h3 {
+      color: #ffe600;
+      margin-top: 0;
+    }
+    .box ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .box li {
+      margin: 0.3rem 0;
     }
     h1 {
       text-align: center;
-      color: #ffcc00;
-      font-size: 2.4rem;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #ffe600;
     }
     details {
-      background-color: #2a2a2a;
-      border: 1px solid #444;
+      background-color: #444;
       border-radius: 5px;
-      margin-bottom: 1rem;
-      padding: 0.5rem;
+      margin: 1rem 0;
+      padding: 0.5rem 1rem;
     }
     summary {
-      font-weight: bold;
       font-size: 1.1rem;
+      font-weight: bold;
       cursor: pointer;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 1rem;
+    }
+    li {
+      margin: 0.3rem 0;
     }
     a {
       color: #66ccff;
@@ -63,31 +104,54 @@ def generate_index_html(output_file="index.html"):
     a:hover {
       text-decoration: underline;
     }
-    ul {
-      list-style-type: none;
-      padding-left: 1.2rem;
-    }
     .footer {
       margin-top: 3rem;
       font-size: 0.85rem;
-      color: #888;
       text-align: center;
+      color: #999;
     }
   </style>
 </head>
 <body>
   <h1>📘 CB-Wiki</h1>
+  <div class="wrapper">
+    <div class="content">
 """
-    # Scanne alle Top-Level-Ordner (außer .git)
     for folder in sorted(os.listdir()):
         if os.path.isdir(folder) and not folder.startswith("."):
             content += f"<h2>📂 {folder}</h2>\n"
             content += scan_directory(folder)
 
-    content += """
+    content += """    </div>
+    <div class="info">
+      <div class="box">
+        <h3>🎁 Current In-Game Codes</h3>
+        <ul>
+          <li>CBSPRING2025</li>
+          <li>BLADEGOLD</li>
+          <li>HERO2025</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>📺 Recommended Creators</h3>
+        <ul>
+          <li><a href="https://twitch.tv/example1" target="_blank">StreamerOne</a></li>
+          <li><a href="https://youtube.com/@example2" target="_blank">YT Channel Two</a></li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>💬 Discord Servers</h3>
+        <ul>
+          <li><a href="https://discord.gg/example1" target="_blank">Main CB Discord</a></li>
+          <li><a href="https://discord.gg/example2" target="_blank">House Community</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
   <div class="footer">Created with ❤️ using GitHub Pages</div>
 </body>
 </html>"""
+
     with open(output_file, "w", encoding="utf-8") as f:
         f.write(content)
     print(f"✅ Neue index.html erfolgreich erstellt: {output_file}")
