@@ -8,50 +8,65 @@
       background-color: #1e1e1e;
       color: #f0f0f0;
       font-family: 'Segoe UI', sans-serif;
-      max-width: 900px;
       margin: 2rem auto;
+      max-width: 900px;
       padding: 1rem;
+      line-height: 1.6;
     }
     h1 {
       text-align: center;
-      color: #ffcc00;
       font-size: 2.4rem;
+      color: #ffcc00;
     }
-    details {
-      background-color: #2a2a2a;
-      border: 1px solid #444;
-      border-radius: 5px;
-      margin-bottom: 1rem;
-      padding: 0.5rem;
+    h2 {
+      color: #66ccff;
+      margin-top: 2rem;
+      border-bottom: 1px solid #444;
+      padding-bottom: 0.3rem;
     }
     summary {
-      font-weight: bold;
       font-size: 1.1rem;
+      font-weight: bold;
       cursor: pointer;
+      padding: 6px;
+    }
+    details {
+      margin-bottom: 1rem;
+      border: 1px solid #444;
+      border-radius: 6px;
+      background-color: #2a2a2a;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 1.2rem;
+    }
+    li {
+      margin: 0.4rem 0;
     }
     a {
       color: #66ccff;
       text-decoration: none;
     }
     a:hover {
+      color: white;
       text-decoration: underline;
     }
-    ul {
-      list-style-type: none;
-      padding-left: 1.2rem;
-    }
     .footer {
-      margin-top: 3rem;
+      margin-top: 4rem;
       font-size: 0.85rem;
-      color: #888;
       text-align: center;
+      color: #888;
     }
   </style>
 </head>
 <body>
   <h1>📘 CB-Wiki</h1>
-<h2>📂 General</h2>
-<h2>📂 Units</h2>
+  <h2>⚔️ Units</h2>
+  <details open>
+    <summary>📁 Special Units</summary>
+    <ul>
+    </ul>
+  </details>
   <details open>
     <summary>📁 Tier 2</summary>
     <ul>
@@ -97,7 +112,8 @@
       <li><a href="Units/Tier%205/T5%20Phallanx.pdf" target="_blank">T5 Phallanx</a></li>
     </ul>
   </details>
-
-  <div class="footer">Created with ❤️ using GitHub Pages</div>
+  <div class="footer">
+    Created with ❤️ using GitHub Pages
+  </div>
 </body>
 </html>
