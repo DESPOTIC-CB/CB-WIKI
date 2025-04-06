@@ -5,10 +5,7 @@ def scan_directory(base_path):
     html = ""
     for root, dirs, files in os.walk(base_path):
         rel_root = os.path.relpath(root, base_path).replace("\\", "/")
-        if rel_root == ".":
-            section_title = base_path
-        else:
-            section_title = rel_root
+        section_title = rel_root if rel_root != "." else base_path
 
         pdf_links = []
         for file in sorted(files):
@@ -22,6 +19,38 @@ def scan_directory(base_path):
             html += f'  <details open>\n    <summary>📁 {section_title}</summary>\n    <ul>\n'
             html += "\n".join(pdf_links)
             html += "\n    </ul>\n  </details>\n"
+    return html
+
+def parse_textbox_file(filepath):
+    lines = []
+    title = None
+    try:
+        with open(filepath, encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line.startswith("## "):
+                    title = line[3:].strip()
+                elif line:
+                    lines.append(line)
+    except:
+        pass
+    return title, lines
+
+def create_sidebar_boxes():
+    html = ""
+    for file in sorted(os.listdir()):
+        if file.endswith(".txt"):
+            title, lines = parse_textbox_file(file)
+            if not title:
+                title = os.path.splitext(file)[0].replace("_", " ").title()
+            html += f'<div class="box">\n<h3>{title}</h3>\n<ul>\n'
+            for line in lines:
+                if "|" in line:
+                    name, url = line.split("|", 1)
+                    html += f'<li><a href="{url.strip()}" target="_blank">{name.strip()}</a></li>\n'
+                else:
+                    html += f"<li>{line}</li>\n"
+            html += "</ul>\n</div>\n"
     return html
 
 def generate_index_html(output_file="index.html"):
@@ -117,35 +146,15 @@ def generate_index_html(output_file="index.html"):
   <div class="wrapper">
     <div class="content">
 """
+
     for folder in sorted(os.listdir()):
         if os.path.isdir(folder) and not folder.startswith("."):
             content += f"<h2>📂 {folder}</h2>\n"
             content += scan_directory(folder)
 
-    content += """    </div>
+    content += f"""    </div>
     <div class="info">
-      <div class="box">
-        <h3>🎁 Current In-Game Codes</h3>
-        <ul>
-          <li>CBSPRING2025</li>
-          <li>BLADEGOLD</li>
-          <li>HERO2025</li>
-        </ul>
-      </div>
-      <div class="box">
-        <h3>📺 Recommended Creators</h3>
-        <ul>
-          <li><a href="https://twitch.tv/example1" target="_blank">StreamerOne</a></li>
-          <li><a href="https://youtube.com/@example2" target="_blank">YT Channel Two</a></li>
-        </ul>
-      </div>
-      <div class="box">
-        <h3>💬 Discord Servers</h3>
-        <ul>
-          <li><a href="https://discord.gg/example1" target="_blank">Main CB Discord</a></li>
-          <li><a href="https://discord.gg/example2" target="_blank">House Community</a></li>
-        </ul>
-      </div>
+{create_sidebar_boxes()}
     </div>
   </div>
   <div class="footer">Created with ❤️ using GitHub Pages</div>
@@ -154,7 +163,7 @@ def generate_index_html(output_file="index.html"):
 
     with open(output_file, "w", encoding="utf-8") as f:
         f.write(content)
-    print(f"✅ Neue index.html erfolgreich erstellt: {output_file}")
+    print("✅ Neue index.html erfolgreich erstellt.")
 
 if __name__ == "__main__":
     generate_index_html()
