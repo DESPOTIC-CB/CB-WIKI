@@ -1,3 +1,4 @@
+
 import os
 from urllib.parse import quote
 
@@ -152,6 +153,57 @@ def generate_index_html(output_file="index.html"):
             content += f"<h2>📂 {folder}</h2>\n"
             content += scan_directory(folder)
 
+    # Melee Damage Formula – hinzugefügt
+    content += """<h2>📂 Mechanics</h2>
+<details>
+  <summary style="color: #ffe600;">⚔️ Melee Damage Formula (Click to Expand)</summary>
+  <div style="margin-top: 10px; padding: 10px; background-color: #1e1e1e; border-radius: 10px;">
+    <table style="width: 100%; background-color: #1e1e1e; color: #e0e0e0; border-collapse: collapse; font-family: sans-serif;">
+      <thead>
+        <tr style="background-color: #2a2a2a; color: gold;">
+          <th style="padding: 10px; border: 1px solid #333;">Component</th>
+          <th style="padding: 10px; border: 1px solid #333;">Formula</th>
+          <th style="padding: 10px; border: 1px solid #333;">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #333;">Penetration Rate</td>
+          <td style="padding: 10px; border: 1px solid #333;">
+            max(1 - Armor / (Weapon AP × (Skill AP Coeff + Speed Coeff) + Extra Skill AP), 0.05)
+          </td>
+          <td style="padding: 10px; border: 1px solid #333;">
+            Damage reduced by armor. Minimum 5% penetration guaranteed.<br>
+            <strong>Note:</strong> If Skill AP Coeff = 0 → No damage dealt
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #333;">Raw Damage</td>
+          <td style="padding: 10px; border: 1px solid #333;">
+            Weapon Damage × (1 + Weapon Buff)<br>
+            × Skill Damage Coeff<br>
+            × (1 + Crit Coeff + (Headshot OR Backattack))<br>
+            + Speed Coeff + Skill Buff Coeff + Extra Skill Damage
+          </td>
+          <td style="padding: 10px; border: 1px solid #333;">
+            Complete calculation before armor. Includes buffs, crits, position bonuses.<br>
+            <strong>Note:</strong> If Skill Damage Coeff = 0 → No damage
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #333;">Final Damage</td>
+          <td style="padding: 10px; border: 1px solid #333;">
+            Raw Damage × Penetration Rate
+          </td>
+          <td style="padding: 10px; border: 1px solid #333;">
+            Resulting effective damage after armor mitigation.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</details>\n""" 
+
     content += f"""    </div>
     <div class="info">
 {create_sidebar_boxes()}
@@ -163,7 +215,7 @@ def generate_index_html(output_file="index.html"):
 
     with open(output_file, "w", encoding="utf-8") as f:
         f.write(content)
-    print("✅ Neue index.html erfolgreich erstellt.")
+    print("✅ Neue index.html erfolgreich erstellt mit Mechanics-Sektion.")
 
 if __name__ == "__main__":
     generate_index_html()
