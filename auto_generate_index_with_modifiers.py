@@ -148,7 +148,7 @@ def generate_index_html(output_file="index.html"):
     <div class="content">
 """
 
-    for folder in sorted(os.listdir()):
+    for folder in sorted([f for f in os.listdir() if f.lower() != "mechanics"]):
         if os.path.isdir(folder) and not folder.startswith("."):
             content += f"<h2>📂 {folder}</h2>\n"
             content += scan_directory(folder)
