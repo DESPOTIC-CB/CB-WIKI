@@ -154,6 +154,22 @@ def generate_index_html(output_file="index.html"):
 
     # Melee Damage Formula – hinzugefügt
     content += """
+<script>
+  function cbCalculate() {
+    const dmg = parseFloat(document.getElementById("weaponDamage").value);
+    const pen = parseFloat(document.getElementById("penetration").value);
+    const armor = parseFloat(document.getElementById("enemyArmor").value);
+    const critMult = parseFloat(document.getElementById("critPercent").value) / 100;
+    const mod = parseFloat(document.getElementById("modifier").value);
+
+    const penRate = 1 - (armor / (pen + 1));
+    const realPen = Math.max(penRate, 0.05);
+    const raw = dmg * critMult * mod;
+    const final = raw * realPen;
+
+    document.getElementById("result").innerText = "Final Damage: " + final.toFixed(2);
+  }
+</script>
 
     <div class="info">
 {create_sidebar_boxes()}
