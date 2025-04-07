@@ -3,118 +3,119 @@
 <head>
   <meta charset='UTF-8'>
   <title>CB-Wiki</title>
-  
-<style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #1e1e1e;
-    color: #e0e0e0;
-  }
-  .wrapper {
-    display: flex;
-    flex-direction: row;
-    min-height: 100vh;
-  }
-  .sidebar {
-    width: 260px;
-    padding: 1rem;
-    background-color: #1e1e1e;
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100%;
-    overflow-y: auto;
-    border-right: 1px solid #333;
-  }
-  .content {
-    margin-left: 280px;
-    padding: 2rem;
-    max-width: 1000px;
-    flex: 1;
-  }
-  h1 {
-    color: #ffe600;
-  }
-  .card {
-    background-color: #2a2a2a;
-    border: 2px solid #ffe600;
-    border-radius: 6px;
-    padding: 10px;
-    margin-bottom: 1rem;
-  }
-  .card h3 {
-    margin: 0 0 10px 0;
-    color: #ffe600;
-  }
-  .card ul {
-    padding-left: 20px;
-    margin: 0;
-  }
-  .card ul li {
-    margin-bottom: 4px;
-  }
-  .info {
-    margin-top: 2rem;
-  }
-</style>
-
+  <style>
+    body {
+      margin: 0;
+      background-color: #2b2b2b;
+      font-family: Arial, sans-serif;
+      color: #f1f1f1;
+      line-height: 1.6;
+    }
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 2rem;
+      gap: 2rem;
+    }
+    .content {
+      flex: 2;
+      max-width: 800px;
+    }
+    .info {
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .box {
+      background-color: #333;
+      border: 2px solid #ffe600;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 0 10px #111;
+    }
+    .box h3 {
+      color: #ffe600;
+      margin-top: 0;
+    }
+    .box ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .box li {
+      margin: 0.3rem 0;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #ffe600;
+    }
+    details {
+      background-color: #444;
+      border-radius: 5px;
+      margin: 1rem 0;
+      padding: 0.5rem 1rem;
+    }
+    summary {
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 1rem;
+    }
+    li {
+      margin: 0.3rem 0;
+    }
+    a {
+      color: #66ccff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .footer {
+      margin-top: 3rem;
+      font-size: 0.85rem;
+      text-align: center;
+      color: #999;
+    }
+  </style>
 </head>
 <body>
-<div class="wrapper">
-
-<div class="sidebar">
-  <div class="card"><h3>Current Active Codes</h3><p>Coming soon...</p></div>
-  <div class="card"><h3>Featured Creator(S)</h3><p>Coming soon...</p></div>
-  <div class="card"><h3>Featured Discord Server(S)</h3><p>Coming soon...</p></div>
-  <div class="card"><h3>S Tier Hero Classes</h3>
-    <ul>
-      <li>Poleaxe (Epic Set)</li>
-      <li>Dualblade</li>
-      <li>Nodachi</li>
-      <li>Spear & Shield</li>
-    </ul>
-  </div>
-  <div class="card"><h3>S Tier Unit(S)</h3>
-    <ul>
-      <li>Spartan Chosen</li>
-      <li>Phallanx (after nerf)</li>
-      <li>Yanyuedao Cav</li>
-      <li>Lion Roar Crew (Team Unit)</li>
-    </ul>
-  </div>
-</div>
-
   <h1>📘 CB-Wiki</h1>
   <div class="wrapper">
     <div class="content">
 <h2>📂 Hero Class</h2>
-  <details>
+  <details open>
     <summary>📁 Glaive</summary>
     <ul>
       <li><a href="Hero%20Class/Glaive/Glaive.pdf" target="_blank">Glaive</a></li>
     </ul>
   </details>
-  <details>
+  <details open>
     <summary>📁 Musket</summary>
     <ul>
       <li><a href="Hero%20Class/Musket/Musket.pdf" target="_blank">Musket</a></li>
     </ul>
   </details>
-  <details>
+  <details open>
     <summary>📁 Nodachi</summary>
     <ul>
       <li><a href="Hero%20Class/Nodachi/Nodachi.pdf" target="_blank">Nodachi</a></li>
     </ul>
   </details>
-  <details>
+  <details open>
     <summary>📁 Shortsword</summary>
     <ul>
       <li><a href="Hero%20Class/Shortsword/Shortsword.pdf" target="_blank">Shortsword</a></li>
     </ul>
   </details>
 <h2>📂 NPCs</h2>
-  <details>
+  <details open>
     <summary>📁 VENDOR NPCs</summary>
     <ul>
       <li><a href="NPCs/VENDOR%20NPCs/NPC%20-%20Artificer%20Reforge.pdf" target="_blank">NPC   Artificer Reforge</a></li>
@@ -123,7 +124,7 @@
     </ul>
   </details>
 <h2>📂 UNIT - QUICK GUIDES</h2>
-  <details>
+  <details open>
     <summary>📁 Tier 2</summary>
     <ul>
       <li><a href="UNIT%20-%20QUICK%20GUIDES/Tier%202/Couteliers.pdf" target="_blank">Couteliers</a></li>
@@ -135,7 +136,7 @@
       <li><a href="UNIT%20-%20QUICK%20GUIDES/Tier%202/Rattan%20Roundshields.pdf" target="_blank">Rattan Roundshields</a></li>
     </ul>
   </details>
-  <details>
+  <details open>
     <summary>📁 Tier 3</summary>
     <ul>
       <li><a href="UNIT%20-%20QUICK%20GUIDES/Tier%203/Condoterri.pdf" target="_blank">Condoterri</a></li>
@@ -148,7 +149,7 @@
       <li><a href="UNIT%20-%20QUICK%20GUIDES/Tier%203/Vanguard%20Archers.pdf" target="_blank">Vanguard Archers</a></li>
     </ul>
   </details>
-  <details>
+  <details open>
     <summary>📁 Tier 4</summary>
     <ul>
       <li><a href="UNIT%20-%20QUICK%20GUIDES/Tier%204/Achilles%20Cav.pdf" target="_blank">Achilles Cav</a></li>
@@ -166,7 +167,7 @@
       <li><a href="UNIT%20-%20QUICK%20GUIDES/Tier%204/Wuweis.pdf" target="_blank">Wuweis</a></li>
     </ul>
   </details>
-  <details>
+  <details open>
     <summary>📁 Tier 5</summary>
     <ul>
       <li><a href="UNIT%20-%20QUICK%20GUIDES/Tier%205/Iron%20Reaper.pdf" target="_blank">Iron Reaper</a></li>
@@ -176,29 +177,62 @@
       <li><a href="UNIT%20-%20QUICK%20GUIDES/Tier%205/T5%20Phallanx.pdf" target="_blank">T5 Phallanx</a></li>
     </ul>
   </details>
-
-<script>
-  function cbCalculate() {
-    const dmg = parseFloat(document.getElementById("weaponDamage").value);
-    const pen = parseFloat(document.getElementById("penetration").value);
-    const armor = parseFloat(document.getElementById("enemyArmor").value);
-    const critMult = parseFloat(document.getElementById("critPercent").value) / 100;
-    const mod = parseFloat(document.getElementById("modifier").value);
-
-    const penRate = 1 - (armor / (pen + 1));
-    const realPen = Math.max(penRate, 0.05);
-    const raw = dmg * critMult * mod;
-    const final = raw * realPen;
-
-    document.getElementById("result").innerText = "Final Damage: " + final.toFixed(2);
-  }
-</script>
-
+    </div>
     <div class="info">
-{create_sidebar_boxes()}
+<div class="box">
+<h3>Current Active Codes</h3>
+<ul>
+<li>Coming soon...</li>
+</ul>
+</div>
+<div class="box">
+<h3>Featured Creator(S)</h3>
+<ul>
+<li>Coming soon...</li>
+<li>Any requests?</li>
+<li>-> Discord: "swehh"</li>
+<li>Just DM/Type me</li>
+</ul>
+</div>
+<div class="box">
+<h3>Featured Discord Server(S)</h3>
+<ul>
+<li>test</li>
+</ul>
+</div>
+<div class="box">
+<h3>S Tier Hero Classes</h3>
+<ul>
+<li>Poleaxe (Epic Set)</li>
+<li>Dualblade</li>
+<li>Nodachi</li>
+<li>Spear & Shield</li>
+<li>test</li>
+</ul>
+</div>
+<div class="box">
+<h3>S Tier Unit(S)</h3>
+<ul>
+<li>Spartan Chosen</li>
+<li>Phallanx (after nerf)</li>
+<li>Yanyuedao Cav</li>
+<li>Lion Roar Crew (Team Unit)</li>
+</ul>
+</div>
+<div class="box">
+<h3>Testcategory</h3>
+<ul>
+<li>TestCategory.txt</li>
+</ul>
+</div>
+<div class="box">
+<h3>Tools</h3>
+<ul>
+</ul>
+</div>
+
     </div>
   </div>
   <div class="footer">Created with ❤️ using GitHub Pages</div>
-</div>
 </body>
 </html>
