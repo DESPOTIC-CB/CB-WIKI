@@ -1,3 +1,4 @@
+
 import os
 from urllib.parse import quote
 
@@ -52,6 +53,15 @@ def create_sidebar_boxes():
                     html += f"<li>{line}</li>\n"
             html += "</ul>\n</div>\n"
     return html
+
+    html += """
+    <div class="box">
+      <h3>Visitors</h3>
+      <a href="https://hits.sh/despotic-cb.github.io/CB-WIKI/">
+        <img alt="Hits" src="https://hits.sh/despotic-cb.github.io/CB-WIKI.svg?style=flat-square&label=visits&color=ffcc00&labelColor=1a1a1a" style="margin-top: 5px;">
+      </a>
+    </div>
+    """
 
 def generate_index_html(output_file="index.html"):
     content = """<!DOCTYPE html>
@@ -152,6 +162,8 @@ def generate_index_html(output_file="index.html"):
             content += f"<h2>📂 {folder}</h2>\n"
             content += scan_directory(folder)
 
+    # Melee Damage Formula – hinzugefügt
+
     content += f"""    </div>
     <div class="info">
 {create_sidebar_boxes()}
@@ -163,7 +175,7 @@ def generate_index_html(output_file="index.html"):
 
     with open(output_file, "w", encoding="utf-8") as f:
         f.write(content)
-    print("✅ Neue index.html erfolgreich erstellt.")
+    print("✅ Neue index.html erfolgreich erstellt mit Mechanics-Sektion.")
 
 if __name__ == "__main__":
     generate_index_html()
