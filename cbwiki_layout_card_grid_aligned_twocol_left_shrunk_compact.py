@@ -75,6 +75,40 @@ def generate_index_html(output_file="index.html"):
 
     .info {
       display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      justify-items: start;
+      gap: 16px;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px 60px 60px 60px;
+      border-radius: 16px;
+      max-width: 1100px;
+      margin: 40px auto 60px auto;
+    }
+
+    .box {
+      background-color: rgba(20, 20, 20, 0.85);
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+      width: 100%;
+      max-width: 360px;
+    }
+
+    h3 {
+      margin-top: 0;
+      font-size: 1.3rem;
+    }
+
+    body {
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+
+    .info {
+      display: grid;
       grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
       justify-items: stretch;
       gap: 24px;
@@ -146,6 +180,10 @@ def generate_index_html(output_file="index.html"):
     }
     .box {
       background-color: rgba(20, 20, 20, 0.8);
+      border-radius: 6px;
+      padding: 10px;
+      font-size: 0.85rem;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
       border-radius: 10px;
       padding: 15px;
     }
@@ -178,12 +216,17 @@ def generate_index_html(output_file="index.html"):
     }
     .box {
       background-color: rgba(20, 20, 20, 0.8);
+      border-radius: 6px;
+      padding: 10px;
+      font-size: 0.85rem;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
       border: 2px solid #ffe600;
       border-radius: 8px;
       padding: 1rem;
       box-shadow: 0 0 10px #111;
     }
     .box h3 {
+      font-size: 1.1rem;
       color: #ffe600;
       margin-top: 0;
     }
@@ -192,6 +235,7 @@ def generate_index_html(output_file="index.html"):
       padding-left: 0;
     }
     .box li {
+      font-size: 0.85rem;
       margin: 0.3rem 0;
     }
     h1 {
