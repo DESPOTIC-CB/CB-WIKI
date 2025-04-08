@@ -6,7 +6,89 @@
   <style>
     body {
       margin: 0;
-      background-color: #2b2b2b;
+
+    .info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      justify-items: stretch;
+      gap: 24px;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px 40px;
+      border-radius: 16px;
+      max-width: 1200px;
+      margin: 40px 40px 60px 40px;
+    }
+
+    .box {
+      background-color: rgba(20, 20, 20, 0.85);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    }
+
+    h3 {
+      margin-top: 0;
+      font-size: 1.4rem;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+
+    .info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px 40px;
+      border-radius: 16px;
+      max-width: 1600px;
+      margin: 40px 40px 60px 40px;
+    }
+
+    .box {
+      background-color: rgba(20, 20, 20, 0.85);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    }
+
+    h3 {
+      margin-top: 0;
+      font-size: 1.4rem;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+
+    .info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 12px;
+    }
+    .box {
+      background-color: rgba(20, 20, 20, 0.8);
+      border-radius: 10px;
+      padding: 15px;
+    }
+
+      background-image: url('Background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
       font-family: Arial, sans-serif;
       color: #f1f1f1;
       line-height: 1.6;
@@ -29,7 +111,7 @@
       gap: 1rem;
     }
     .box {
-      background-color: #333;
+      background-color: rgba(20, 20, 20, 0.8);
       border: 2px solid #ffe600;
       border-radius: 8px;
       padding: 1rem;
@@ -90,38 +172,38 @@
   <div class="wrapper">
     <div class="content">
 <h2>📂 Hero Class</h2>
-  <details open>
+  <details>
     <summary>📁 Dualblade</summary>
     <ul>
       <li><a href="Hero%20Class/Dualblade/Dualblade.pdf" target="_blank">Dualblade</a></li>
     </ul>
   </details>
-  <details open>
+  <details>
     <summary>📁 Glaive</summary>
     <ul>
       <li><a href="Hero%20Class/Glaive/Glaive.pdf" target="_blank">Glaive</a></li>
     </ul>
   </details>
-  <details open>
+  <details>
     <summary>📁 Musket</summary>
     <ul>
       <li><a href="Hero%20Class/Musket/Musket.pdf" target="_blank">Musket</a></li>
     </ul>
   </details>
-  <details open>
+  <details>
     <summary>📁 Nodachi</summary>
     <ul>
       <li><a href="Hero%20Class/Nodachi/Nodachi.pdf" target="_blank">Nodachi</a></li>
     </ul>
   </details>
-  <details open>
+  <details>
     <summary>📁 Shortsword</summary>
     <ul>
       <li><a href="Hero%20Class/Shortsword/Shortsword.pdf" target="_blank">Shortsword</a></li>
     </ul>
   </details>
 <h2>📂 NPCs</h2>
-  <details open>
+  <details>
     <summary>📁 VENDOR NPCs</summary>
     <ul>
       <li><a href="NPCs/VENDOR%20NPCs/NPC%20-%20Artificer%20Reforge.pdf" target="_blank">NPC   Artificer Reforge</a></li>
@@ -130,7 +212,7 @@
     </ul>
   </details>
 <h2>📂 UNIT - QUICK GUIDES</h2>
-  <details open>
+  <details>
     <summary>📁 Tier 2</summary>
     <ul>
       <li><a href="UNIT%20-%20QUICK%20GUIDES/Tier%202/Couteliers.pdf" target="_blank">Couteliers</a></li>
@@ -142,7 +224,7 @@
       <li><a href="UNIT%20-%20QUICK%20GUIDES/Tier%202/Rattan%20Roundshields.pdf" target="_blank">Rattan Roundshields</a></li>
     </ul>
   </details>
-  <details open>
+  <details>
     <summary>📁 Tier 3</summary>
     <ul>
       <li><a href="UNIT%20-%20QUICK%20GUIDES/Tier%203/Condoterri.pdf" target="_blank">Condoterri</a></li>
@@ -155,7 +237,7 @@
       <li><a href="UNIT%20-%20QUICK%20GUIDES/Tier%203/Vanguard%20Archers.pdf" target="_blank">Vanguard Archers</a></li>
     </ul>
   </details>
-  <details open>
+  <details>
     <summary>📁 Tier 4</summary>
     <ul>
       <li><a href="UNIT%20-%20QUICK%20GUIDES/Tier%204/Achilles%20Cav.pdf" target="_blank">Achilles Cav</a></li>
@@ -173,7 +255,7 @@
       <li><a href="UNIT%20-%20QUICK%20GUIDES/Tier%204/Wuweis.pdf" target="_blank">Wuweis</a></li>
     </ul>
   </details>
-  <details open>
+  <details>
     <summary>📁 Tier 5</summary>
     <ul>
       <li><a href="UNIT%20-%20QUICK%20GUIDES/Tier%205/Iron%20Reaper.pdf" target="_blank">Iron Reaper</a></li>

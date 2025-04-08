@@ -17,7 +17,7 @@ def scan_directory(base_path):
                 pdf_links.append(f'      <li><a href="{web_path}" target="_blank">{display_name}</a></li>')
 
         if pdf_links:
-            html += f'  <details open>\n    <summary>📁 {section_title}</summary>\n    <ul>\n'
+            html += f'  <details>\n    <summary>📁 {section_title}</summary>\n    <ul>\n'
             html += "\n".join(pdf_links)
             html += "\n    </ul>\n  </details>\n"
     return html
@@ -72,7 +72,89 @@ def generate_index_html(output_file="index.html"):
   <style>
     body {
       margin: 0;
-      background-color: #2b2b2b;
+
+    .info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      justify-items: stretch;
+      gap: 24px;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px 40px;
+      border-radius: 16px;
+      max-width: 1200px;
+      margin: 40px 40px 60px 40px;
+    }
+
+    .box {
+      background-color: rgba(20, 20, 20, 0.85);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    }
+
+    h3 {
+      margin-top: 0;
+      font-size: 1.4rem;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+
+    .info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px 40px;
+      border-radius: 16px;
+      max-width: 1600px;
+      margin: 40px 40px 60px 40px;
+    }
+
+    .box {
+      background-color: rgba(20, 20, 20, 0.85);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    }
+
+    h3 {
+      margin-top: 0;
+      font-size: 1.4rem;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+
+    .info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 12px;
+    }
+    .box {
+      background-color: rgba(20, 20, 20, 0.8);
+      border-radius: 10px;
+      padding: 15px;
+    }
+
+      background-image: url('Background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
       font-family: Arial, sans-serif;
       color: #f1f1f1;
       line-height: 1.6;
@@ -95,7 +177,7 @@ def generate_index_html(output_file="index.html"):
       gap: 1rem;
     }
     .box {
-      background-color: #333;
+      background-color: rgba(20, 20, 20, 0.8);
       border: 2px solid #ffe600;
       border-radius: 8px;
       padding: 1rem;
